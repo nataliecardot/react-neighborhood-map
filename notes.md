@@ -1,3 +1,5 @@
+Suggested deadline to finish by 10/24: 10/17
+
 TODOS
 
 API key
