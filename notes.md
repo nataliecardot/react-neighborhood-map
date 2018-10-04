@@ -19,8 +19,13 @@ Elements on the page use the appropriate semantic elements. For those elements i
 
 Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus.
 
-gitignore: node_modules
-service worker
+Add functionality using third-party APIs to provide information when a map marker or list view entry is clicked
+(use Foursquare)
+Client ID
+342ZVQQ0DRCMR2ERCT3OO0N3FUNZS0KPVQCYQVLW1AGUQ22R
+Client Secret
+E2H5EWNQ5X4LTNXM31WHPETUCPTXKB1FDWQDC15JEGVVEOYM
+
 README -  clear instructions for setting up and running your project application code
 
 create react app - jsx must be transpiled to regular JSX. normally you'd use babel and then webpack to bundle the assets. eliminates the need to install or configure module bundlers like Webpack, or transpilers like Babel; they come preconfigured with create react app. installs react, react-dom, and react-scripts (installs Babel, webpack, and webpack-dev-server that provides auto-reload behavior) packages.
