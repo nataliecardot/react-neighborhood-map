@@ -2,4 +2,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 npm start - starts development server
 
+Using [react-google-maps](https://github.com/tomchentw/react-google-maps)
+
 Using Foursquare API
