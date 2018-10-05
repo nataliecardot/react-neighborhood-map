@@ -8,6 +8,7 @@ class Helper {
     return 'https://api.foursquare.com/v2';
   }
 
+  // Userless authentication
   static auth() {
     const keys = {
       client_id: '342ZVQQ0DRCMR2ERCT3OO0N3FUNZS0KPVQCYQVLW1AGUQ22R',
@@ -17,23 +18,24 @@ class Helper {
 
     // Object.keys() returns an array of a given object's own property names
     return Object.keys(keys)
-      // Generates new array that is result of calling provided function on every element on calling array
+      // .map() generates new array that is result of calling provided function on every element on calling array
       // For each property name (key) of keys object in newly generated array, generating a string, in the format property name/key=[property value, accessed with bracket notation]
       .map(key => `${key}=${keys[key]}`)
       // Joins elements of array into a string, separated with whatever is passed in as argument. So output of auth() is like key=value&key=value&key=value
       .join('&');
   }
 
-  static urlBuilder(urlParams) {
-    if (!urlParams) {
+  // Formatting venue search parameters (listed under "Parameters" in https://developer.foursquare.com/docs/api/venues/search) into format like name=MollyMoon&limit=10.
+  static urlBuilder(searchParams) {
+    if (!searchParams) {
       return '';
     }
 
-    // Object.keys() returns an array of a given object's own property names
-    return Object.keys(urlParams)
-    // Generates new array that is result of calling provided function on every element on calling array
-    // For each property name (key) of keys object in newly generated array, generating a string, in the format property name/key=[property value, accessed with bracket notation]
-      .map(key => `${key}=${urlParams[key]}`)
+    // Object.keys() returns an array of a given object's (searchParams) own property names
+    return Object.keys(searchParams)
+    // .map() generates new array that is result of calling provided function on every element on calling array
+    // For each property name (key) of (searchParams) object in newly generated array, generating a string, in the format property name/key=[property value, accessed with bracket notation]
+      .map(key => `${key}=${searchParams[key]}`)
       .join('&');
   }
 
@@ -43,16 +45,16 @@ class Helper {
     };
   }
 
-  // endpoint: anything after base URL, corresponding to Foursquare's venue endpoints, such as /venues/search). Method: PUT, GET, POST, etc. urlParam: venue parameters (such as 'near', 'intent', 'radius')
-  // Note: Verified credit card; I am in Foursquare's Personal Tier, allowing for 99,500 Regular API Calls per day and 500 Premium API Calls per day
-  static basicFetch(endpoint, method, urlParams) {
+  // endpoint: Foursquare's venue endpoints, which follows base URL, such as /venues/search. Also can include venue ID in case of getVenueDetails and getVenuePhotos (static methods on FoursquareAPI). Some listed in https://developer.foursquare.com/docs/api/venues/details. Method: PUT, GET, POST, etc. searchParams: venue parameters (such as 'near', 'intent', 'radius'), listed in https://developer.foursquare.com/docs/api/venues/search
+  // Note: Verified credit card; I am in Foursquare's Personal Tier, allowing for about 10k Regular API Calls per day and 500 Premium API Calls per day
+  static basicFetch(endpoint, method, searchParams) {
     let requestData = {
       method,
       headers: Helper.headers()
     };
 
     // fetch() returns a promise, which resolves to response sent back from the server. Once promise resolves, then() used to convert response to json
-    return fetch(`${Helper.baseURL()}${endpoint}?${Helper.urlBuilder(urlParams)}&${Helper.auth()}`,
+    return fetch(`${Helper.baseURL()}${endpoint}?${Helper.urlBuilder(searchParams)}&${Helper.auth()}`,
       requestData
     // json() method of Fetch API's Body mixin takes server's response stream and reads it to completion, then returns a promise that resolves with result of parsing body text as JSON (it converts string received from server to a JSON object)
     ).then(res => res.json());
@@ -64,8 +66,8 @@ export default class FoursquareAPI {
     return Helper.basicFetch(`/venues/${VENUE_ID}`, 'GET');
   }
 
-  static search(urlParams) {
-    return Helper.basicFetch('/venues/search', 'GET', urlParams);
+  static search(searchParams) {
+    return Helper.basicFetch('/venues/search', 'GET', searchParams);
   }
 
   static getVenuePhotos(VENUE_ID) {
