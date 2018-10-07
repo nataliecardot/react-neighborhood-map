@@ -1,4 +1,4 @@
-// For including venue details with Foursquare API
+// This file is for including venue details with Foursquare Places API
 // API call guidelines https://developer.foursquare.com/docs/api
 
 // Items in this class are used to fill in fetch request
@@ -39,22 +39,11 @@ class Helper {
       .join('&');
   }
 
-  static headers() {
-    return {
-      Accept: 'application/json'
-    };
-  }
-
   // endpoint: Foursquare's venue endpoints, which follows base URL, such as /venues/search. Also can include venue ID in case of getVenueDetails and getVenuePhotos (static methods on FoursquareAPI). Some listed in https://developer.foursquare.com/docs/api/venues/details. searchParams: venue parameters (such as 'near', 'intent', 'radius'), listed in https://developer.foursquare.com/docs/api/venues/search. Note that default fetch HTTP method is GET, so no need to specify this in the request
   // Note: Verified credit card; I am in Foursquare's Personal Tier, allowing for about 10k Regular API Calls per day and 500 Premium API Calls per day
   static basicFetch(endpoint, searchParams) {
-    let requestData = {
-      headers: Helper.headers()
-    };
-
     // fetch() returns a promise, which resolves to response sent back from the server. Once promise resolves, then() used to convert response to json
-    return fetch(`${Helper.baseURL()}${endpoint}?${Helper.urlBuilder(searchParams)}&${Helper.auth()}`,
-      requestData
+    return fetch(`${Helper.baseURL()}${endpoint}?${Helper.urlBuilder(searchParams)}&${Helper.auth()}`
     // json() method of Fetch API's Body mixin takes server's response stream and reads it to completion, then returns a promise that resolves with result of parsing body text as JSON (it converts string received from server to a JSON object)
     ).then(res => res.json());
   }
