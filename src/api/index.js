@@ -45,11 +45,10 @@ class Helper {
     };
   }
 
-  // endpoint: Foursquare's venue endpoints, which follows base URL, such as /venues/search. Also can include venue ID in case of getVenueDetails and getVenuePhotos (static methods on FoursquareAPI). Some listed in https://developer.foursquare.com/docs/api/venues/details. Method: PUT, GET, POST, etc. searchParams: venue parameters (such as 'near', 'intent', 'radius'), listed in https://developer.foursquare.com/docs/api/venues/search
+  // endpoint: Foursquare's venue endpoints, which follows base URL, such as /venues/search. Also can include venue ID in case of getVenueDetails and getVenuePhotos (static methods on FoursquareAPI). Some listed in https://developer.foursquare.com/docs/api/venues/details. searchParams: venue parameters (such as 'near', 'intent', 'radius'), listed in https://developer.foursquare.com/docs/api/venues/search. Note that default fetch HTTP method is GET, so no need to specify this in the request
   // Note: Verified credit card; I am in Foursquare's Personal Tier, allowing for about 10k Regular API Calls per day and 500 Premium API Calls per day
-  static basicFetch(endpoint, method, searchParams) {
+  static basicFetch(endpoint, searchParams) {
     let requestData = {
-      method,
       headers: Helper.headers()
     };
 
@@ -63,14 +62,14 @@ class Helper {
 
 export default class FoursquareAPI {
   static getVenueDetails(VENUE_ID) {
-    return Helper.basicFetch(`/venues/${VENUE_ID}`, 'GET');
+    return Helper.basicFetch(`/venues/${VENUE_ID}`);
   }
 
   static search(searchParams) {
-    return Helper.basicFetch('/venues/search', 'GET', searchParams);
+    return Helper.basicFetch('/venues/search', searchParams);
   }
 
   static getVenuePhotos(VENUE_ID) {
-    return Helper.basicFetch(`/venues/${VENUE_ID}/photos`, 'GET');
+    return Helper.basicFetch(`/venues/${VENUE_ID}/photos`);
   }
 }
