@@ -28,7 +28,6 @@ const MyMapComponent = withScriptjs(
                 {/* If there's a bestPhoto prop (evaluates to true), return the venue photo and name, if not, return the venue name alone */}
                 {(venueInfo.bestPhoto) ? (
                   <Fragment>
-                    {/* Renders venue name and descriptive paragraph */}
                     <p>{venueInfo.name}</p>
                     <img    src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
                     // Screen readers already announce as image; don't need the word "image", "photo", etc.
