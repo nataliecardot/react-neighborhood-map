@@ -12,6 +12,33 @@ export default class App extends Component {
       zoom: 14
     };
   }
+
+  handleMarkerClick = marker => {
+    this.closeAllMarkers();
+    marker.isOpen = true;
+    // Copies values of properties from marker (the source) to this.state.markers (the target). This is needed to update the state of clicked marker's new isOpen value of true
+    this.setState({markers: Object.assign(this.state.markers, marker)});
+    // find() method returns the value of the first element in the array that satisfies the provided testing function. So this searches the venues list held in state (see componentDidMount() method for how this is derived) until the venue matching the marker is located, and it returns it; the venue variable is that located venue
+    const venue = this.state.venues.find(venue => venue.id = marker.id);
+    // Fetches data associated with clicked marker's ID
+    FoursquareAPI.getVenueInfo(marker.id).then(results => {
+      // Copies properties from results.response.venue (source) to venue (target). venue in results.response.venue is from venue variable created previously (with ID matching clicked marker's ID). Remember venue is venue from existing venues state whose ID matches that of clicked marker. This will be needed to update venues state with this info
+      const newVenue = Object.assign(venue, results.response.venue);
+      this.setState({venues: Object.assign(this.state.venues, newVenue)});
+      console.log(newVenue);
+    });
+  };
+
+  // Called when a marker is clicked. For closing previously clicked marker's infowindow (if applicable)
+  closeAllMarkers = () => {
+    // Returns new array that is result of setting each marker's isOpen value to false. Note that it doesn't close the newly clicked marker's infowindow because that marker's isOpen value is set to true immediately after this is called
+    const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      return marker;
+    });
+    this.setState({markers: Object.assign(this.state.markers, markers)});
+  }
+
   // Foursquare Places API fetch request testing and markers handling
   componentDidMount() {
     FoursquareAPI.search({
@@ -19,9 +46,9 @@ export default class App extends Component {
       query: 'ice cream',
       limit: 10
     }).then(results => {
-      // Object destructuring assignment. Instead of using results.response.venues, this allows for using venues alone when referencing it. See https://wesbos.com/destructuring-objects/
+      // Object destructuring assignment. Instead of using results.response.venues, this allows for using venues alone when referencing it. See https://wesbos.com/destructuring-objects/. This info will be used to update venues property
       const { venues } = results.response;
-      // Returning info from each venue and storing it in new array
+      // Returning info from each venue and storing it in new array. This info will be used to update markers property
       const markers = venues.map(venue => {
         return {
           lat: venue.location.lat,
@@ -29,7 +56,8 @@ export default class App extends Component {
           // For info windows (none should be open on page load)
           isOpen: false,
           // Sets all markers to visible on page load
-          isVisible: true
+          isVisible: true,
+          id: venue.id
         };
       });
       // Reminder: Use object setState whenever new state does not depend on its previous state (as opposed to functional setState)
@@ -42,8 +70,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* Using spread syntax/operator to spread out state */}
-        <Map {...this.state} />
+        {/* Using spread syntax/operator to expand/insert state, making it available in rendered map component */}
+        <Map {...this.state} handleMarkerClick={this.handleMarkerClick} />
       </div>
     );
   }

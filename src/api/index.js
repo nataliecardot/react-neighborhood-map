@@ -39,7 +39,7 @@ class Helper {
       .join('&');
   }
 
-  // endpoint: Foursquare's venue endpoints, which follows base URL, such as /venues/search. Also can include venue ID in case of getVenueDetails and getVenuePhotos (static methods on FoursquareAPI). Some listed in https://developer.foursquare.com/docs/api/venues/details. searchParams: venue parameters (such as 'near', 'intent', 'radius'), listed in https://developer.foursquare.com/docs/api/venues/search. Note that default fetch HTTP method is GET, so no need to specify this in the request
+  // endpoint: Foursquare's venue endpoints, which follows base URL, such as /venues/search. Also can include venue ID in case of getVenueInfo and getVenuePhotos (static methods on FoursquareAPI). Some listed in https://developer.foursquare.com/docs/api/venues/details. searchParams: venue parameters (such as 'near', 'intent', 'radius'), listed in https://developer.foursquare.com/docs/api/venues/search. Note that default fetch HTTP method is GET, so no need to specify this in the request
   // Note: Verified credit card; I am in Foursquare's Personal Tier, allowing for about 10k Regular API Calls per day and 500 Premium API Calls per day
   static basicFetch(endpoint, searchParams) {
     // fetch() returns a promise, which resolves to response sent back from the server. Once promise resolves, then() used to convert response to json
@@ -50,7 +50,7 @@ class Helper {
 }
 
 export default class FoursquareAPI {
-  static getVenueDetails(VENUE_ID) {
+  static getVenueInfo(VENUE_ID) {
     return Helper.basicFetch(`/venues/${VENUE_ID}`);
   }
 
