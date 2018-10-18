@@ -22,18 +22,18 @@ const MyMapComponent = withScriptjs(
             // Marker click event listener, defined in App component class
             onClick={() => props.handleMarkerClick(marker)}
             >
-            {/* Show marker's infoWindow when its isOpen state is set to true (set in app.js) */}
+            {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen && (
               <InfoWindow>
                 {/* If there's a bestPhoto prop (evaluates to true), return the venue photo and name, if not, return the venue name alone */}
                 {(venueInfo.bestPhoto) ? (
                   <Fragment>
+                    {/* Renders venue name and descriptive paragraph */}
+                    <p>{venueInfo.name}</p>
                     <img    src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
                     // Screen readers already announce as image; don't need the word "image", "photo", etc.
                     alt={"Venue"}
                     />
-                    {/* Renders venue name and descriptive paragraph */}
-                    <p>{venueInfo.name}</p>
                   </Fragment>
                 ) : (<p>{venueInfo.name}</p>)}
               </InfoWindow>
