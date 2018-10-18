@@ -25,8 +25,8 @@ const MyMapComponent = withScriptjs(
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen && (
               <InfoWindow>
-                {/* If there's a venueInfo variable and it contains a name and bestPhoto property, return the venue photo and name. If there's a venueInfo variable and a name property, display the name only. If not, display text indicating no info available. See SO question about multiple ternary operators https://stackoverflow.com/questions/7757549/multiple-ternary-operators */}
-                {((venueInfo.name) && (venueInfo.bestPhoto)) ? (
+                {/* If there's a bestPhoto prop (evaluates to true), return the venue photo and name, if not, return the venue name alone */}
+                {(venueInfo.bestPhoto) ? (
                   <Fragment>
                     <p>{venueInfo.name}</p>
                     <img    src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
@@ -34,7 +34,7 @@ const MyMapComponent = withScriptjs(
                     alt={"Venue"}
                     />
                   </Fragment>
-                ) : (venueInfo.name) ? <p>{venueInfo.name}</p> : <p>Information not available</p>}
+                ) : (<p>{venueInfo.name}</p>)}
               </InfoWindow>
             )}
             </Marker>
