@@ -17,4 +17,36 @@ code {
   text-align: center;
   height: 100vh;
   width: 100vw;
+  /* Since defaults to render components as flex-direction: row, wrap: nowrap, makes it so sidebar is displayed to left of map */
+  display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 25%;
+}
+
+.search {
+  width: 100%;
+  /* Note: rem values are relative to the root html element, not the parent element. 1rem typically = 16px in browsers */
+  height: 2rem;
+  font-size: 1.1rem;
+  padding: 7px;
+}
+
+.venues-list {
+  padding: 0;
+  list-style: none;
+  /* Default 1em margin on top and bottom */
+  margin: 0.5em 0 0.5em 0;
+}
+
+.venues-list-item {
+  cursor: pointer;
+  /* padding: 0.5rem; */
+  border-left: 5px solid #ff0000;
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  margin: 0 7px 10px 7px;
 }

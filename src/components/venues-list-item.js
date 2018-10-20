@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 
 export default class VenuesListItem extends Component {
   render() {
     return (
-      <li className="venue-list-item">
-      </li>
+      <Fragment>
+        <li className="venues-list-item">
+          {this.props.name}
+        </li>
+        <li className="between-items"></li>
+      </Fragment>
     );
   }
 }

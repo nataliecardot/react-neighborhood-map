@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './app.css';
 import Map from './components/map.js';
 import FoursquareAPI from './api/index.js';
+import Sidebar from './components/sidebar';
 
 export default class App extends Component {
   constructor() {
@@ -44,7 +45,7 @@ export default class App extends Component {
     FoursquareAPI.search({
       near: 'Seattle, WA',
       query: 'ice cream',
-      limit: 15
+      limit: 5
     }).then(results => {
       // Object destructuring assignment. Instead of using results.response.venues, this allows for using venues alone when referencing it. See https://wesbos.com/destructuring-objects/. This info will be used to update venues property
       const { venues } = results.response;
@@ -70,6 +71,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+        <Sidebar {...this.state} />
         {/* Using spread syntax/operator to expand/insert state, making it available in rendered map component */}
         <Map {...this.state} handleMarkerClick={this.handleMarkerClick} />
       </div>
