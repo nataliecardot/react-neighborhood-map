@@ -44,7 +44,7 @@ export default class App extends Component {
     FoursquareAPI.search({
       near: 'Seattle, WA',
       query: 'ice cream',
-      limit: 10
+      limit: 15
     }).then(results => {
       // Object destructuring assignment. Instead of using results.response.venues, this allows for using venues alone when referencing it. See https://wesbos.com/destructuring-objects/. This info will be used to update venues property
       const { venues } = results.response;
