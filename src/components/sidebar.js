@@ -3,6 +3,10 @@ import VenuesList from './venues-list';
 import Header from './header';
 
 export default class Sidebar extends Component {
+  handleChange = e => {
+    
+  }
+
   render() {
     return (
       <div className="sidebar">
