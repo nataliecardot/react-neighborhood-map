@@ -30,6 +30,11 @@ export default class App extends Component {
     });
   };
 
+  handleVenuesListItemClick = venue => {
+    const marker = this.state.markers.find(marker => marker.id === venue.id);
+    this.handleMarkerClick(marker);
+  };
+
   // Called when a marker is clicked. For closing previously clicked marker's infowindow (if applicable)
   closeAllMarkers = () => {
     // Returns new array that is result of setting each marker's isOpen value to false. Note that it doesn't close the newly clicked marker's infowindow because that marker's isOpen value is set to true immediately after this is called
@@ -71,7 +76,9 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Sidebar {...this.state} />
+        <Sidebar
+          {...this.state} handleVenuesListItemClick={this.handleVenuesListItemClick}
+        />
         {/* Using spread syntax/operator to expand/insert state, making it available in rendered map component */}
         <Map {...this.state} handleMarkerClick={this.handleMarkerClick} />
       </div>
