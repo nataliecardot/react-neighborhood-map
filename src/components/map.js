@@ -1,7 +1,7 @@
 // This component's code is from react-google-maps implementation instructions https://tomchentw.github.io/react-google-maps/#installation
 
-import React, {Component, Fragment} from 'react';
-import {withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps';
+import React, { Component , Fragment } from 'react';
+import { withScriptjs , withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (

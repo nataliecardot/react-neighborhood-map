@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './app.css';
 import Map from './components/map.js';
 import FoursquareAPI from './api/index.js';
@@ -10,7 +10,11 @@ export default class App extends Component {
     this.state = {
       venues: [],
       markers: [],
-      zoom: 14
+      zoom: 14,
+      // For setting marker state (visibility) from sidebar (made available to sidebar from props)
+      updateMarkerState: obj => {
+        this.setState(obj);
+      }
     };
   }
 
@@ -26,7 +30,6 @@ export default class App extends Component {
       // Copies properties from results.response.venue (source) to venue (target). venue in results.response.venue is from venue variable created previously (with ID matching clicked marker's ID). Remember venue is venue from existing venues state whose ID matches that of clicked marker. This will be needed to update venues state with this info
       const newVenue = Object.assign(venue, results.response.venue);
       this.setState({venues: Object.assign(this.state.venues, newVenue)});
-      console.log(newVenue);
     });
   };
 
