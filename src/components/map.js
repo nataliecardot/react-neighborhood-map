@@ -16,6 +16,7 @@ const MyMapComponent = withScriptjs(
         props.markers.filter(marker => marker.isVisible)
         // "Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity ... When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort" https://reactjs.org/docs/lists-and-keys.html
         .map((marker, index, array) => {
+          // Returns value of first element in array that satisfies provided testing function. This returns data for venue whose ID matches marker ID
           const venueInfo = props.venues.find(venue => venue.id === marker.id);
           return (
             <Marker
@@ -28,19 +29,13 @@ const MyMapComponent = withScriptjs(
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen &&
               <InfoWindow>
-                {/* If a venueInfo is not falsey and: 1) if there's a name and bestPhoto property, return the venue photo and name; 2) if there's only a name property, display the name only; 3) if there's only a photo property, display the photo only. If neither are available and/or venueInfo is falsy display text indicating no info available. See SO question about multiple ternary operators https://stackoverflow.com/questions/7757549/multiple-ternary-operators */}
-                {venueInfo && venueInfo.name && venueInfo.bestPhoto ?
-                <Fragment>
-                <p className="venue-name">{venueInfo.name}</p>
-                <img  src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
-                // Screen readers already announce as image; don't need the word "image", "photo", etc.
-                alt={"Venue"}
-                />
-                <p className="attribution">Powered by Foursquare</p>
-              </Fragment> : venueInfo && venueInfo.name ? <Fragment> <p className="venue-name">{venueInfo.name}</p> <p className="attribution">Powered by Foursquare</p> </Fragment> : venueInfo && venueInfo.bestPhoto ? <Fragment><img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
-                // Screen readers already announce as image; don't need the word "image", "photo", etc.
-                alt={"Venue"}
-                /> <p className="attribution">Powered by Foursquare</p> </Fragment> : <p>No info available</p>}
+                {venueInfo ?
+                  <Fragment>
+                    {venueInfo.name ? <p className="venue-name">{venueInfo.name}</p> : null}
+                    {venueInfo.bestPhoto ? <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`} alt={"Venue"} /> : null}
+                    {venueInfo.location.address ? <p>{`${venueInfo.location.address}`}</p> : null}
+                    <p className="attribution">Powered by Foursquare</p>
+                  </Fragment> : <p>Info unavailable</p>}
               </InfoWindow>
             }
             </Marker>
