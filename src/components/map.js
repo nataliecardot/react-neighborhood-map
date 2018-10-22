@@ -1,3 +1,5 @@
+// Specifies global variable to ESLint (bundled with create-react-app), circumventing no-undef rule. See https://eslint.org/docs/user-guide/configuring#specifying-globals
+/* global google */
 // This component's code is from react-google-maps implementation instructions https://tomchentw.github.io/react-google-maps/#installation
 
 import React, { Component , Fragment } from 'react';
@@ -13,7 +15,7 @@ const MyMapComponent = withScriptjs(
       {props.markers &&
         props.markers.filter(marker => marker.isVisible)
         // "Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity ... When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort" https://reactjs.org/docs/lists-and-keys.html
-        .map((marker, index) => {
+        .map((marker, index, array) => {
           const venueInfo = props.venues.find(venue => venue.id === marker.id);
           return (
             <Marker
@@ -21,6 +23,7 @@ const MyMapComponent = withScriptjs(
             position={{lat: marker.lat, lng: marker.lng}}
             // Marker click event listener, defined in App component class
             onClick={() => props.handleMarkerClick(marker)}
+            animation={array.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
             >
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen &&
