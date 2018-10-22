@@ -31,15 +31,16 @@ const MyMapComponent = withScriptjs(
                 {/* If a venueInfo is not falsey and: 1) if there's a name and bestPhoto property, return the venue photo and name; 2) if there's only a name property, display the name only; 3) if there's only a photo property, display the photo only. If neither are available and/or venueInfo is falsy display text indicating no info available. See SO question about multiple ternary operators https://stackoverflow.com/questions/7757549/multiple-ternary-operators */}
                 {venueInfo && venueInfo.name && venueInfo.bestPhoto ?
                 <Fragment>
-                <p>{venueInfo.name}</p>
-                <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
+                <p className="venue-name">{venueInfo.name}</p>
+                <img  src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
                 // Screen readers already announce as image; don't need the word "image", "photo", etc.
                 alt={"Venue"}
                 />
-                </Fragment> : venueInfo && venueInfo.name ? <p>{venueInfo.name}</p> : venueInfo && venueInfo.bestPhoto ? <img    src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
+                <p className="attribution">Powered by Foursquare</p>
+              </Fragment> : venueInfo && venueInfo.name ? <Fragment> <p className="venue-name">{venueInfo.name}</p> <p className="attribution">Powered by Foursquare</p> </Fragment> : venueInfo && venueInfo.bestPhoto ? <Fragment><img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
                 // Screen readers already announce as image; don't need the word "image", "photo", etc.
                 alt={"Venue"}
-                /> : <p>No info available</p>}
+                /> <p className="attribution">Powered by Foursquare</p> </Fragment> : <p>No info available</p>}
               </InfoWindow>
             }
             </Marker>

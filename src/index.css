@@ -21,17 +21,19 @@ code {
   display: flex;
 }
 
-.header {
-  font-size: 22px;
-  color: #db7093;
-  text-transform: uppercase;
-  cursor: default;
-}
-
 /* SIDEBAR */
 
 .sidebar {
   width: 25%;
+}
+
+/* App name */
+.header {
+  font-size: 22px;
+  color: #db7093;
+  text-transform: uppercase;
+  /* Text cursor is default */
+  cursor: default;
 }
 
 .search {
@@ -54,4 +56,19 @@ code {
   background-color: #f1f1f1;
   padding: 10px 20px;
   margin: 0 7px 10px 7px;
+}
+
+/* INFO WINDOW */
+
+.venue-name {
+  font-weight: bold;
+  font-size: 15px;
+  color: #db7093;
+}
+
+/* "Powered by Foursquare" text */
+.attribution {
+  font-size: 12px;
+  font-weight: 400;
+  color: #808080;
 }
