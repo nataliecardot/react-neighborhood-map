@@ -8,6 +8,7 @@ export default class VenuesListItem extends Component {
           className="venues-list-item"
           // this.props is entire set of venue data spread out in rendering of VenuesListItem in VenuesList component class. handleVenuesListItemClick method is in app.js
           onClick={() => this.props.handleVenuesListItemClick(this.props)}
+          tabIndex="3"
         >
           {this.props.name}
         </li>

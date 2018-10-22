@@ -48,11 +48,12 @@ export default class Sidebar extends Component {
       <div className="sidebar">
         <Header />
         <input
-          autoFocus
+          tabIndex="2"
           type={"search"}
           className={"search"}
           placeholder={"Search"}
           onChange={this.handleChange}
+          role="search"
         />
         <VenuesList
           // Making this component's props available in VenuesList
