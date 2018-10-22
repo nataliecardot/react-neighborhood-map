@@ -10,6 +10,8 @@ const MyMapComponent = withScriptjs(
     <GoogleMap
       zoom={props.zoom}
       defaultCenter={{ lat: 47.6093, lng: -122.3309 }}
+      // Means that the element should be focusable in sequential keyboard navigation, but its order is defined by document's source order
+      tabIndex="0"
     >
       {/* If there are markers, filters all visible markers (creating new array) then maps over newly created array taking the marker and marker's array index as arguments, rendering each Marker component with the marker index set as the key and the marker's lat and long as the position */}
       {props.markers &&
@@ -21,14 +23,16 @@ const MyMapComponent = withScriptjs(
           return (
             <Marker
             key={index}
+            tabIndex="0"
             position={{lat: marker.lat, lng: marker.lng}}
             // Marker click event listener, defined in App component class
             onClick={() => props.handleMarkerClick(marker)}
+            // TODO: Figure out how to set a timeout
             animation={array.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
             >
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen &&
-              <InfoWindow>
+              <InfoWindow aria-label="Venue info window">
                 {venueInfo ?
                   <Fragment>
                     {venueInfo.name ? <p className="venue-name">{venueInfo.name}</p> : null}
@@ -60,7 +64,6 @@ export default class Map extends Component {
         containerElement={<div style={{ height: `100%`, width: `75%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
-      // TODO: Add attribution: Additional location data provided by Foursquare
     );
   }
 }
