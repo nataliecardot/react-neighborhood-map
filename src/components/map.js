@@ -36,6 +36,7 @@ const MyMapComponent = withScriptjs(
               <InfoWindow aria-label="Venue info window">
                 {venueInfo ?
                   <Fragment>
+                    {/* Conditional renering inside info window based on props available, with fallback of null, which doesn't render anything */}
                     {venueInfo.name ? <p className="venue-name">{venueInfo.name}</p> : null}
                     {venueInfo.bestPhoto ? <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`} alt={"Venue"} /> : null}
                     {venueInfo.location.address ? <p>{`${venueInfo.location.address}`}</p> : null}
@@ -56,6 +57,7 @@ export default class Map extends Component {
       <MyMapComponent
         // This is making the this.setState passed into Map component (as its prop) inside App's component class's render method available to MyMapComponent, which is how props from this.setState are eventually included inside MyMapComponent class (such as zoom={props.zoom})
         {...this.props}
+        // Attributes without values are interpreted as Boolean true
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDjl8LxY7Edfulq6t_VDaQsYY4ymPjwN0w"
         role="application"
