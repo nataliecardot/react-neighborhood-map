@@ -9,7 +9,8 @@ const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       zoom={props.zoom}
-      defaultCenter={{ lat: 47.6093, lng: -122.3309 }}
+      // Set as Seattle Art Museum as center
+      defaultCenter={{ lat: 47.6073, lng: -122.3381 }}
       // Means that the element should be focusable in sequential keyboard navigation, but its order is defined by document's source order
       tabIndex="0"
     >
@@ -61,8 +62,8 @@ export default class Map extends Component {
         aria-label="location"
         // CSS declarations are placed in double curly braces because attributes accept JS objects; this is how to include an object literal. See https://stackoverflow.com/questions/22671582/what-is-the-purpose-of-double-curly-braces-in-reacts-jsx-syntax
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%`, width: `75%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+        containerElement={<div className="map-container" style={{ height: `100%`, width: `75%` }} />}
+        mapElement={<div className="map-element" style={{ height: `100%` }} />}
       />
     );
   }

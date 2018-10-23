@@ -7,15 +7,13 @@ This app was built using React as a project for Udacity's Front-End Web Develope
 
 To launch the project:
 
-**Option 1**
-View the [live version](https://nataliecardot.com/react-neighborhood-map/).
+**[View online](https://nataliecardot.com/react-neighborhood-map/)**
 
-**Option 2**
+**View locally**
 1. Clone the repository
 2. Using a command line tool, navigate to the directory's location
 3. Run `npm install`, which installs all modules listed as dependencies in package.json.
-4. Run `npm run build` (runs custom "build" script in package.json)
-5. Run `npm start` to start the development server, opening the app in your default browser. (The command causes node to look for a scripts object in your package.json file, which in this case specifies "react-scripts start.")
+4. Run `npm start` to start the development server, opening the app in your default browser. (The command causes node to look for a scripts object in your package.json file, which in this case specifies "react-scripts start.")
 
 ### Dependencies
 

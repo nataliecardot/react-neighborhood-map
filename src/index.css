@@ -13,11 +13,11 @@ code {
     monospace;
 }
 
-.App {
+.app {
   text-align: center;
   height: 100vh;
   width: 100vw;
-  /* Since defaults to render components as flex-direction: row, wrap: nowrap, makes it so sidebar is displayed to left of map */
+  /* Since defaults to render components as flex-direction: row, flex-wrap: nowrap, makes it so sidebar is displayed to left of map */
   display: flex;
 }
 
@@ -71,4 +71,43 @@ code {
   font-size: 12px;
   font-weight: 400;
   color: #808080;
+}
+
+/* Special styling for screens up to 767px wide (landscape phones) */
+@media screen and (max-width: 767px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 44%;
+  }
+
+  .map-container {
+    /* Need important because styles in map.js would otherwise override these (they're more specific) */
+    width: 100vw !important;
+    height: 56% !important;
+  }
+}
+
+/* Tablets/small screens */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 50%;
+  }
+
+  .map-container {
+    /* 75% by default */
+    width: 100% !important;
+  }
+
+  .search {
+    text-align: center;
+  }
 }
