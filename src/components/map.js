@@ -9,7 +9,8 @@ const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       zoom={props.zoom}
-      defaultCenter={{ lat: 47.6093, lng: -122.3309 }}
+      // Set as Seattle Art Museum as center
+      defaultCenter={{ lat: 47.6073, lng: -122.3381 }}
       // Means that the element should be focusable in sequential keyboard navigation, but its order is defined by document's source order
       tabIndex="0"
     >

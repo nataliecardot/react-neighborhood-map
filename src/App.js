@@ -10,7 +10,7 @@ export default class App extends Component {
     this.state = {
       venues: [],
       markers: [],
-      zoom: 14,
+      zoom: 15,
       // For setting marker state (visibility) from sidebar (made available to sidebar from props)
       updateMarkerState: obj => {
         this.setState(obj);
