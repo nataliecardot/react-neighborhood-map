@@ -78,7 +78,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Sidebar
           {...this.state} handleVenuesListItemClick={this.handleVenuesListItemClick}
         />

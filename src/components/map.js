@@ -61,8 +61,8 @@ export default class Map extends Component {
         aria-label="location"
         // CSS declarations are placed in double curly braces because attributes accept JS objects; this is how to include an object literal. See https://stackoverflow.com/questions/22671582/what-is-the-purpose-of-double-curly-braces-in-reacts-jsx-syntax
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%`, width: `75%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+        containerElement={<div className="map-container" style={{ height: `100%`, width: `75%` }} />}
+        mapElement={<div className="map-element" style={{ height: `100%` }} />}
       />
     );
   }
