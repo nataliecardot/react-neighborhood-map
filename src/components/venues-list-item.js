@@ -6,6 +6,8 @@ export default class VenuesListItem extends Component {
     return (
         <li
           className="venues-list-item"
+          // Default is listitem. Using in conjunction with role of listitem
+          role="menuitem"
           // this.props is entire set of venue data spread out in rendering of VenuesListItem in VenuesList component class. handleVenuesListItemClick method is in app.js
           onClick={() => this.props.handleVenuesListItemClick(this.props)}
           tabIndex="3"
