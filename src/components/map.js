@@ -28,8 +28,7 @@ const MyMapComponent = withScriptjs(
             position={{lat: marker.lat, lng: marker.lng}}
             // Marker click event listener, defined in App component class
             onClick={() => props.handleMarkerClick(marker)}
-            // TODO: Figure out how to set a timeout, add event listener for InfoWindow close button that sets marker.isOpen to false
-            animation={array.length === 1 || marker.isOpen ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+            animation={array.length !== 1 && google.maps.Animation.DROP}
             aria-label="marker"
             >
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
