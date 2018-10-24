@@ -18,7 +18,7 @@ To launch the project:
 
 ### Service Worker
 
-A service worker, for caching requests to the app's assets for offline use, is included in the production build. If you would like to use the app with the service worker enabled, launch the project from your computer, run `npm run build` then `serve -s build`, and visit `http://localhost:5000`.
+A service worker for caching requests to the app's assets for offline use is available for use in the production build only.
 
 ### Dependencies
 
