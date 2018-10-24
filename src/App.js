@@ -75,6 +75,7 @@ export default class App extends Component {
     }).catch(error => alert("Sorry, there was an error."))
   }
 
+  // For when Google Maps API doesn't load
   // This lifecycle method is a feature of React 16 (released 2017). By using it, this component becomes an error boundary, that is, a component that catches a JS error and can log the error and/or display fallback UI. For more info see https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
   componentDidCatch(error) {
     alert("Sorry, there was an error.")
