@@ -30,6 +30,7 @@ const MyMapComponent = withScriptjs(
             onClick={() => props.handleMarkerClick(marker)}
             // TODO: Figure out how to set a timeout, add event listener for InfoWindow close button that sets marker.isOpen to false
             animation={array.length === 1 || marker.isOpen ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+            aria-label="marker"
             >
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen &&
@@ -61,7 +62,7 @@ export default class Map extends Component {
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDjl8LxY7Edfulq6t_VDaQsYY4ymPjwN0w"
         role="application"
-        aria-label="location"
+        aria-label="map"
         // CSS declarations are placed in double curly braces because attributes accept JS objects; this is how to include an object literal. See https://stackoverflow.com/questions/22671582/what-is-the-purpose-of-double-curly-braces-in-reacts-jsx-syntax
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div className="map-container" style={{ height: `100%`, width: `75%` }} />}
