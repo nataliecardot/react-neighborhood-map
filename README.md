@@ -18,7 +18,7 @@ To launch the project:
 
 ### Service Worker
 
-A service worker for caching requests to the app's assets for offline use is available for use in the production build only.
+A service worker for caching requests to the app's assets for offline use is available for use in the production build only. To run this version, run `npm install -g serve` then `serve -s build`, which serves the project on port 5000 (navigate to http://localhost:5000).
 
 ### Dependencies
 

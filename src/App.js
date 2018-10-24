@@ -72,7 +72,7 @@ export default class App extends Component {
       this.setState({venues, markers});
       // Testing fetch request
       console.log(results);
-    });
+    }).then(err => console.log(err));
   }
 
   render() {
