@@ -49,11 +49,12 @@ export default class Sidebar extends Component {
         <Header />
         <input
           tabIndex="2"
-          type={"search"}
-          className={"search"}
-          placeholder={"Search"}
+          type="search"
+          className="search"
+          placeholder="Search"
           onChange={this.handleChange}
           role="search"
+          aria-label="search"
         />
         <VenuesList
           // Making this component's props available in VenuesList
