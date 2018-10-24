@@ -82,7 +82,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      // Using role of main is alternative to using <main> HTML element. See https://www.scottohara.me/blog/2018/03/03/landmarks.html
+      <div className="app" role="main">
         <Sidebar
           {...this.state} handleVenuesListItemClick={this.handleVenuesListItemClick}
         />
