@@ -22,7 +22,7 @@ A service worker for caching requests to the app's assets for offline use is ava
 
 ### Dependencies
 
-This project's code was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app), which installs the packages `react`, `react-dom`, and `react-scripts`. Additionally, `react-scripts` installs Babel, webpack, and `webpack-dev-server`, which provides auto-reload behavior, and provides a service worker.
+This project's code was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app), which installs the packages `react`, `react-dom`, and `react-scripts`. Additionally, `react-scripts` installs Babel, webpack, and `webpack-dev-server`, which provides auto-reload behavior, as well as provides a service worker.
 
 I utilized the Google Maps API and the [react-google-maps](https://github.com/tomchentw/react-google-maps) component to integrate it into my app.
 
