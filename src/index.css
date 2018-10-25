@@ -73,8 +73,8 @@ code {
   color: #808080;
 }
 
-/* Special styling for screens up to 767px wide (landscape phones) */
-@media screen and (max-width: 767px) {
+/* Special styling for landscape phones and tablets/small screens */
+@media screen and (max-width: 991px) {
   .app {
     flex-direction: column;
   }
@@ -85,41 +85,15 @@ code {
 
   .sidebar {
     width: 100%;
-    height: 44%;
+    height: 35%;
     overflow-y: scroll;
     border-bottom: 2px solid #d0d0d0;
   }
 
   .map-container {
     /* Need important because styles in map.js would otherwise override these (they're more specific) */
-    width: 100vw !important;
-    height: 56% !important;
-  }
-
-  .search {
-    text-align: center;
-  }
-}
-
-/* Tablets/small screens */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .app {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: 50%;
-    /* overflow-y: scroll; */
-    height: 50%;
-    overflow-y: scroll;
-    border-bottom: 2px solid #d0d0d0;
-  }
-
-  .map-container {
-    /* 75% by default */
     width: 100% !important;
-    height: 50% !important;
+    height: 65% !important;
   }
 
   .search {
