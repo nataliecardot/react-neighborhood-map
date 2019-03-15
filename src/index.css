@@ -73,7 +73,7 @@ code {
   color: #808080;
 }
 
-/* Special styling for landscape phones and tablets/small screens */
+/* Special styling for phones and tablets */
 @media screen and (max-width: 991px) {
   .app {
     flex-direction: column;
