@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Map from './components/map.js';
-import FoursquareAPI from './api/index.js';
-import Sidebar from './components/sidebar';
+import Map from './map.js';
+import FoursquareAPI from '../api/index.js';
+import Sidebar from './sidebar';
 
 export default class App extends Component {
   constructor() {
