@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import VenuesList from './venues-list';
 import Header from './header';
 import { slide as Menu } from 'react-burger-menu';
+import MediaQuery from 'react-responsive';
 
 export default class Sidebar extends Component {
   // Called before component is mounted. Used for initializing local state with this.state and binding event handler methods to an instance
@@ -46,27 +47,52 @@ export default class Sidebar extends Component {
 
   render() {
     return (
-      <Menu>
-        <div className="sidebar" pageWrapId={ "page-wrap" }>
-          <Header />
-          <input
-            tabIndex="2"
-            type="search"
-            className="search"
-            placeholder="Search"
-            onChange={this.handleChange}
-            role="search"
-            aria-label="search"
-          />
-          <VenuesList
-            // Making this component's props available in VenuesList
-            {...this.props}
-            venues={this.handleVenueSearch()}
-            // Method is in app.js
-            handleVenuesListItemClick={this.props.handleVenuesListItemClick}
-          />
-        </div>
-      </Menu>
+      <>
+        <MediaQuery query="(max-device-width: 767px)">
+        <Menu>
+          <div className="sidebar" pageWrapId={ "page-wrap" }>
+            <Header />
+            <input
+              tabIndex="2"
+              type="search"
+              className="search"
+              placeholder="Search"
+              onChange={this.handleChange}
+              role="search"
+              aria-label="search"
+            />
+            <VenuesList
+              // Making this component's props available in VenuesList
+              {...this.props}
+              venues={this.handleVenueSearch()}
+              // Method is in app.js
+              handleVenuesListItemClick={this.props.handleVenuesListItemClick}
+            />
+          </div>
+        </Menu>
+        </MediaQuery>
+        <MediaQuery query="(min-device-width: 768px)">
+          <div className="sidebar" pageWrapId={ "page-wrap" }>
+            <Header />
+            <input
+              tabIndex="2"
+              type="search"
+              className="search"
+              placeholder="Search"
+              onChange={this.handleChange}
+              role="search"
+              aria-label="search"
+            />
+            <VenuesList
+              // Making this component's props available in VenuesList
+              {...this.props}
+              venues={this.handleVenueSearch()}
+              // Method is in app.js
+              handleVenuesListItemClick={this.props.handleVenuesListItemClick}
+            />
+          </div>
+        </MediaQuery>
+      </>
     );
   }
 }
