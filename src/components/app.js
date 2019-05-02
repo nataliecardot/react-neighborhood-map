@@ -89,7 +89,7 @@ export default class App extends Component {
           {...this.state} handleVenuesListItemClick={this.handleVenuesListItemClick}
         />
         {/* Using spread syntax/operator to expand/insert state, making it available in rendered map component */}
-        <Map {...this.state} handleMarkerClick={this.handleMarkerClick} />
+        <Map id="page-wrap" {...this.state} handleMarkerClick={this.handleMarkerClick} />
       </div>
     );
   }
