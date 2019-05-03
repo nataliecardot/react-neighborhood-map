@@ -1,13 +1,13 @@
-Neighborhood Map
+Seattle Scoops
 ======
 
-This app was built using React as a project for Udacity's Front-End Web Developer Nanodegree program. The default map displays a handful of ice cream shops in Seattle, and allows for viewing data (the name and an image) associated with individual shops.
+This app was built using React as a project for Udacity's Front-End Web Developer Nanodegree program. The default map displays ice cream shops in the Seattle area and allows for viewing data (the name and an image) associated with individual shops.
 
 ### Get Started
 
 To launch the project:
 
-**[View online](https://nataliecardot.com/react-neighborhood-map/)**
+**[View online](https://nataliecardot.com/seattle-scoops/)**
 
 **View locally**
 1. Clone the repository
