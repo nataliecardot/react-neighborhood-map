@@ -2,7 +2,7 @@
   "name": "react-neighborhood-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nataliecardot.github.io/react-neighborhood-map/",
+  "homepage": "https://nataliecardot.github.io/seattle-scoops",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.5.2",
