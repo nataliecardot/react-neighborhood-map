@@ -28,3 +28,9 @@ I utilized the Google Maps API and the [react-google-maps](https://github.com/to
 To display venue information for clicked markers, I used the [Foursquare Places API](https://developer.foursquare.com/places-api).
 
 To deploy to GitHub Pages, I used the `gh-pages` [package](https://www.npmjs.com/package/gh-pages), with the help of [this tutorial](https://codeburst.io/deploy-react-to-github-pages-to-create-an-amazing-website-42d8b09cd4d).
+
+### Future Improvements
+
+* On mobile, use state to close sidebar when a venue from the list is selected
+* Increase 'x' size on venue popup in mobile view
+* Change color/size of 'x' that appears to clear input text
