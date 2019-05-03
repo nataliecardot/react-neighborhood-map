@@ -9,7 +9,7 @@ export default class App extends Component {
     this.state = {
       venues: [],
       markers: [],
-      zoom: 15,
+      zoom: 14,
       // For setting marker state (visibility) from sidebar (made available to sidebar from props)
       updateMarkerState: obj => {
         this.setState(obj);
@@ -52,7 +52,7 @@ export default class App extends Component {
     FoursquareAPI.search({
       near: 'Seattle, WA',
       query: 'ice cream',
-      limit: 10
+      limit: 50
     }).then(results => {
       // Object destructuring assignment. Instead of using results.response.venues, this allows for using venues alone when referencing it. See https://wesbos.com/destructuring-objects/. This info will be used to update venues property
       const { venues } = results.response;
@@ -89,7 +89,7 @@ export default class App extends Component {
           {...this.state} handleVenuesListItemClick={this.handleVenuesListItemClick}
         />
         {/* Using spread syntax/operator to expand/insert state, making it available in rendered map component */}
-        <Map id="page-wrap" {...this.state} handleMarkerClick={this.handleMarkerClick} />
+        <Map {...this.state} handleMarkerClick={this.handleMarkerClick} />
       </div>
     );
   }

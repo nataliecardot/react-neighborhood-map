@@ -9,8 +9,8 @@ const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       zoom={props.zoom}
-      // Set as Seattle Art Museum as center
-      defaultCenter={{ lat: 47.6073, lng: -122.3381 }}
+      // Set to lat/long of Paramount Theatre
+      defaultCenter={{ lat: 47.6133, lng: -122.3313 }}
       // Means that the element should be focusable in sequential keyboard navigation, but its order is defined by document's source order
       tabIndex="0"
     >
@@ -23,13 +23,13 @@ const MyMapComponent = withScriptjs(
           const venueInfo = props.venues.find(venue => venue.id === marker.id);
           return (
             <Marker
-            key={index}
-            tabIndex="0"
-            position={{lat: marker.lat, lng: marker.lng}}
-            // Marker click event listener, defined in App component class
-            onClick={() => props.handleMarkerClick(marker)}
-            animation={array.length !== 1 && google.maps.Animation.DROP}
-            aria-label="marker"
+              key={index}
+              tabIndex="0"
+              position={{lat: marker.lat, lng: marker.lng}}
+              // Marker click event listener, defined in App component class
+              onClick={() => props.handleMarkerClick(marker)}
+              animation={array.length !== 1 && google.maps.Animation.DROP}
+              aria-label="marker"
             >
             {/* Show marker's InfoWindow when its isOpen state is set to true (set in app.js) */}
             {marker.isOpen &&

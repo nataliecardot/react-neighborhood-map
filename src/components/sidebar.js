@@ -50,7 +50,7 @@ export default class Sidebar extends Component {
       <>
         <MediaQuery query="(max-device-width: 767px)">
         <Menu>
-          <div className="sidebar" pageWrapId={ "page-wrap" }>
+          <div className="sidebar">
             <Header />
             <input
               tabIndex="2"
@@ -72,7 +72,7 @@ export default class Sidebar extends Component {
         </Menu>
         </MediaQuery>
         <MediaQuery query="(min-device-width: 768px)">
-          <div className="sidebar" pageWrapId={ "page-wrap" }>
+          <div className="sidebar">
             <Header />
             <input
               tabIndex="2"
