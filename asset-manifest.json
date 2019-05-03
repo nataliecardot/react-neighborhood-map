@@ -1,13 +1,13 @@
 {
-  "main.css": "/react-neighborhood-map/static/css/main.4e7385f0.chunk.css",
-  "main.js": "/react-neighborhood-map/static/js/main.4de67e9c.chunk.js",
-  "main.js.map": "/react-neighborhood-map/static/js/main.4de67e9c.chunk.js.map",
-  "static/js/1.33307424.chunk.js": "/react-neighborhood-map/static/js/1.33307424.chunk.js",
-  "static/js/1.33307424.chunk.js.map": "/react-neighborhood-map/static/js/1.33307424.chunk.js.map",
-  "runtime~main.js": "/react-neighborhood-map/static/js/runtime~main.df449222.js",
-  "runtime~main.js.map": "/react-neighborhood-map/static/js/runtime~main.df449222.js.map",
-  "static/css/main.4e7385f0.chunk.css.map": "/react-neighborhood-map/static/css/main.4e7385f0.chunk.css.map",
-  "index.html": "/react-neighborhood-map/index.html",
-  "precache-manifest.480240cbb5e7f118c8d34902fbed5010.js": "/react-neighborhood-map/precache-manifest.480240cbb5e7f118c8d34902fbed5010.js",
-  "service-worker.js": "/react-neighborhood-map/service-worker.js"
+  "main.css": "/seattle-scoops/static/css/main.4e7385f0.chunk.css",
+  "main.js": "/seattle-scoops/static/js/main.29be6aa7.chunk.js",
+  "main.js.map": "/seattle-scoops/static/js/main.29be6aa7.chunk.js.map",
+  "static/js/1.33307424.chunk.js": "/seattle-scoops/static/js/1.33307424.chunk.js",
+  "static/js/1.33307424.chunk.js.map": "/seattle-scoops/static/js/1.33307424.chunk.js.map",
+  "runtime~main.js": "/seattle-scoops/static/js/runtime~main.4630d5fa.js",
+  "runtime~main.js.map": "/seattle-scoops/static/js/runtime~main.4630d5fa.js.map",
+  "static/css/main.4e7385f0.chunk.css.map": "/seattle-scoops/static/css/main.4e7385f0.chunk.css.map",
+  "index.html": "/seattle-scoops/index.html",
+  "precache-manifest.4267450047b33904ee39ec6d847311cc.js": "/seattle-scoops/precache-manifest.4267450047b33904ee39ec6d847311cc.js",
+  "service-worker.js": "/seattle-scoops/service-worker.js"
 }
