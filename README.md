@@ -34,3 +34,4 @@ To deploy to GitHub Pages, I used the `gh-pages` [package](https://www.npmjs.com
 * On mobile, use state to close sidebar when a venue from the list is selected
 * Increase 'x' size on venue popup in mobile view
 * Change color/size of 'x' that appears to clear input text
+* Find workaround for placement of sidebar scrollbar on desktop Chrome (okay in Firefox)
