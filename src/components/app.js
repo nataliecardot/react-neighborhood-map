@@ -23,8 +23,7 @@ export default class App extends Component {
     marker.isOpen = true;
     // Copies values of properties from marker (the source) to this.state.markers (the target). This is needed to update the state of clicked marker's new isOpen value of true
     this.setState({
-      markers: Object.assign(this.state.markers, marker),
-      menuIsOpen: false
+      markers: Object.assign(this.state.markers, marker)
     });
     // find() method returns the value of the first element in the array that satisfies the provided testing function. So this searches the venues list held in state (see componentDidMount() method for how this is derived) until the venue matching the marker is located, and it returns it; the venue variable is that located venue
     const venue = this.state.venues.find(venue => (venue.id = marker.id));
@@ -39,6 +38,7 @@ export default class App extends Component {
   };
 
   handleVenuesListItemClick = venue => {
+    this.setState({ menuIsOpen: false });
     const marker = this.state.markers.find(marker => marker.id === venue.id);
     this.handleMarkerClick(marker);
   };
