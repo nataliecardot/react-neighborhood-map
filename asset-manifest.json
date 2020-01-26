@@ -1,13 +1,13 @@
 {
-  "main.css": "/seattle-scoops/static/css/main.1361e897.chunk.css",
-  "main.js": "/seattle-scoops/static/js/main.81f8a18e.chunk.js",
-  "main.js.map": "/seattle-scoops/static/js/main.81f8a18e.chunk.js.map",
-  "static/js/1.a14ee021.chunk.js": "/seattle-scoops/static/js/1.a14ee021.chunk.js",
-  "static/js/1.a14ee021.chunk.js.map": "/seattle-scoops/static/js/1.a14ee021.chunk.js.map",
+  "main.css": "/seattle-scoops/static/css/main.0035ed40.chunk.css",
+  "main.js": "/seattle-scoops/static/js/main.06095590.chunk.js",
+  "main.js.map": "/seattle-scoops/static/js/main.06095590.chunk.js.map",
+  "static/js/1.2034f6d0.chunk.js": "/seattle-scoops/static/js/1.2034f6d0.chunk.js",
+  "static/js/1.2034f6d0.chunk.js.map": "/seattle-scoops/static/js/1.2034f6d0.chunk.js.map",
   "runtime~main.js": "/seattle-scoops/static/js/runtime~main.4630d5fa.js",
   "runtime~main.js.map": "/seattle-scoops/static/js/runtime~main.4630d5fa.js.map",
-  "static/css/main.1361e897.chunk.css.map": "/seattle-scoops/static/css/main.1361e897.chunk.css.map",
+  "static/css/main.0035ed40.chunk.css.map": "/seattle-scoops/static/css/main.0035ed40.chunk.css.map",
   "index.html": "/seattle-scoops/index.html",
-  "precache-manifest.17a690d5ee5fb75a68d9328333010f60.js": "/seattle-scoops/precache-manifest.17a690d5ee5fb75a68d9328333010f60.js",
+  "precache-manifest.d5a2ea0766f9efdc9422542c1eefec01.js": "/seattle-scoops/precache-manifest.d5a2ea0766f9efdc9422542c1eefec01.js",
   "service-worker.js": "/seattle-scoops/service-worker.js"
 }
