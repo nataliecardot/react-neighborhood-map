@@ -49,7 +49,7 @@ export default class Sidebar extends Component {
     return (
       <>
         <MediaQuery query="(max-device-width: 767px)">
-          <Menu>
+          <Menu isOpen={this.props.menuIsOpen}>
             <div className="sidebar">
               <Header />
               <input
