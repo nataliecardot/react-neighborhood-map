@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/seattle-scoops/precache-manifest.d5a2ea0766f9efdc9422542c1eefec01.js"
+  "/seattle-scoops/precache-manifest.7e39849e078b697744594ea4047358d1.js"
 );
 
 workbox.clientsClaim();
