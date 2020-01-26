@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c1f4c582d063081dc7d2",
+    "revision": "932591bf6bd7e51ac220",
     "url": "/seattle-scoops/static/css/main.60a12daa.chunk.css"
   },
   {
-    "revision": "c1f4c582d063081dc7d2",
-    "url": "/seattle-scoops/static/js/main.c1f4c582.chunk.js"
+    "revision": "932591bf6bd7e51ac220",
+    "url": "/seattle-scoops/static/js/main.932591bf.chunk.js"
   },
   {
     "revision": "2034f6d0f0e469268ecd",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/seattle-scoops/static/js/runtime~main.4630d5fa.js"
   },
   {
-    "revision": "3aee3f8e2b28a32973884ba4ec629105",
+    "revision": "4b6f219dda6171bed3eca0f83c801726",
     "url": "/seattle-scoops/index.html"
   }
 ];
